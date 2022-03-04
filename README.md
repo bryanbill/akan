@@ -1,0 +1,2 @@
+# akan
+Akan names generator
