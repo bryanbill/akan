@@ -1,5 +1,5 @@
 // Hold Akan names in the global namespace
-var akanNames = [
+const akanNames = [
     {
         male: "Kwasi",
         female: "Akosua"
@@ -30,18 +30,21 @@ var akanNames = [
     }
 ];
 
-const day = "2001-01-18";
-
-const dayOfWeek = new Date(day).getDay();
-
-console.log(akanNames[dayOfWeek].male);
-
 /**
  * Get the day of the week for date of birth
  * @param {*} date 
  * @returns int
  */
-const getDay = (date) => new Date(date).getDay();
+const getDay = (date) => {
+    // Parse the date to get Date object
+    const parsedDate = new Date(date);
+
+    // Date does not work for years before 1970
+    if (parsedDate.getFullYear() < 1970) return;
+
+    // Return the day of the week otherwise
+    return parsedDate.getDay();
+};
 
 /**
  * Pick Akan Name based on the gender and day of week
@@ -57,15 +60,19 @@ const pickAkanName = (gender, dayOfWeek) => {
     return akanNames[dayOfWeek].female;
 }
 
+/**
+ * 
+ */
 const main = () => {
     const dob = document.getElementById('dob').value;
     const gender = document.getElementById('gender').value;
     const name = document.getElementById('fullName').value;
 
-    const dayOfWeek = getDay(dob);
-    const akanName = pickAkanName(gender, dayOfWeek);
+    const dayOfWeek = getDay("2000-08-18");
+    const akanName = pickAkanName("male", dayOfWeek);
 
     // Show Modal with the name
-
-
+    console.table({ dayOfWeek, akanName })
 }
+
+main();
