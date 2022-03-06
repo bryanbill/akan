@@ -12,12 +12,6 @@
 
 - This project generates Akan names based on the given bio data (Birth Date).
 
-#
-
-#### Final Project Preview
-
-![Final Project Preview](./assets/screenshot.png) <br><br><br><br>
-
 ## Languages and Frameworks
 
 - Html5
