@@ -71,7 +71,10 @@ const main = () => {
         const akanName = pickAkanName(gender, dayOfWeek);
 
         // Show Modal with the name
-        console.table({ dayOfWeek, akanName, name })
+        document.getElementById('modal-overlay').classList.toggle('hidden');
+        document.getElementById('modal').classList.toggle('hidden');
+        document.getElementById('username').innerText = `Hello ${name}`;
+        document.getElementById('text').innerText = `Your Akan Name is: ${akanName}`
     } else {
         var toast = document.getElementById("toast");
         toast.className = "show";
@@ -96,6 +99,13 @@ document.getElementById('submit').addEventListener("click", (event) => {
     main();
 });
 
+/**
+ * Validates the input values
+ * @param {*} dob 
+ * @param {*} gender 
+ * @param {*} name 
+ * @returns bool
+ */
 const validate = (dob, gender, name) => {
     console.log(dob);
     if (dob.length === 0 || gender.length === 0 || name.length === 0) {
