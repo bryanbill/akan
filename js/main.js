@@ -68,11 +68,11 @@ const main = () => {
     const gender = document.getElementById('gender').value;
     const name = document.getElementById('fullName').value;
 
-    const dayOfWeek = getDay("2000-08-18");
-    const akanName = pickAkanName("male", dayOfWeek);
+    const dayOfWeek = getDay(dob);
+    const akanName = pickAkanName(gender, dayOfWeek);
 
     // Show Modal with the name
-    console.table({ dayOfWeek, akanName })
+    console.table({ dayOfWeek, akanName, name })
 }
 
 main();
