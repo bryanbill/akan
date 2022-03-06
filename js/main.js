@@ -81,7 +81,7 @@ const main = () => {
  * This method prevents main function from being caled prematurely
  * @returns  - void
  */
-document.getElementById('submit').addEventListener((event) => {
+document.getElementById('submit').addEventListener("click", (event) => {
     // Prevent the default action of the event {Reloading the page, e.t.c}
     event.preventDefault();
 
