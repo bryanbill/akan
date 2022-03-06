@@ -39,9 +39,6 @@ const getDay = (date) => {
     // Parse the date to get Date object
     const parsedDate = new Date(date);
 
-    // Date does not work for years before 1970
-    if (parsedDate.getFullYear() < 1970) return;
-
     // Return the day of the week otherwise
     return parsedDate.getDay();
 };
