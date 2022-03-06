@@ -1,4 +1,4 @@
-// Hold Akan names in the global namespace
+// Hold Akan names in the global scope
 const akanNames = [
     {
         male: "Kwasi",
