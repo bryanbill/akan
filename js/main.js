@@ -66,11 +66,21 @@ const main = () => {
     const gender = document.getElementById('gender').value;
     const name = document.getElementById('fullName').value;
 
-    const dayOfWeek = getDay(dob);
-    const akanName = pickAkanName(gender, dayOfWeek);
+    if (validate(dob, gender, name)) {
+        const dayOfWeek = getDay(dob);
+        const akanName = pickAkanName(gender, dayOfWeek);
 
-    // Show Modal with the name
-    console.table({ dayOfWeek, akanName, name })
+        // Show Modal with the name
+        console.table({ dayOfWeek, akanName, name })
+    } else {
+        var toast = document.getElementById("toast");
+        toast.className = "show";
+
+        // Show the toast for 3 seconds only
+        setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+
+    }
+
 }
 
 /**
@@ -85,3 +95,14 @@ document.getElementById('submit').addEventListener("click", (event) => {
     // Trigger the main function
     main();
 });
+
+const validate = (dob, gender, name) => {
+    console.log(dob);
+    if (dob.length === 0 || gender.length === 0 || name.length === 0) {
+
+        return false;
+
+    }
+    console.info("Seems good, proceed");
+    return true;
+}
