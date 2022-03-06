@@ -61,7 +61,8 @@ const pickAkanName = (gender, dayOfWeek) => {
 }
 
 /**
- * 
+ * Main function of the app
+ * @returns  void
  */
 const main = () => {
     const dob = document.getElementById('dob').value;
@@ -75,4 +76,15 @@ const main = () => {
     console.table({ dayOfWeek, akanName, name })
 }
 
-main();
+/**
+ * Listen to events from Submit button and trigger the main function
+ * This method prevents main function from being caled prematurely
+ * @returns  - void
+ */
+document.getElementById('submit').addEventListener((event) => {
+    // Prevent the default action of the event {Reloading the page, e.t.c}
+    event.preventDefault();
+
+    // Trigger the main function
+    main();
+});
