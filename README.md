@@ -12,6 +12,11 @@
 
 - This project generates Akan names based on the given bio data (Birth Date).
 
+### Behavior Driven Development
+- User Fills their Bio Data
+- Akan name is generated
+- Modal is displayed with the generated name
+
 ## Languages and Frameworks
 
 - Html5
